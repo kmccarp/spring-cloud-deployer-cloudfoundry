@@ -85,7 +85,7 @@ public class CloudFoundryAppNameGenerator implements AppNameGenerator, Initializ
 		String alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		char[] result = new char[7];
 		Random random = new Random();
-		for (int i = 0 ; i < result.length ; i++) {
+		for (int i = 0; i < result.length; i++) {
 			result[i] = alphabet.charAt(random.nextInt(alphabet.length()));
 		}
 		return new String(result);

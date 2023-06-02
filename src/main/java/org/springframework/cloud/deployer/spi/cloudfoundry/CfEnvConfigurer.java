@@ -75,11 +75,9 @@ class CfEnvConfigurer {
 
 		if (appendToExistingEntry(updatedEnvironment, SPRING_PROFILES_ACTIVE, CLOUD_PROFILE_NAME)) {
 			return updatedEnvironment;
-		}
-		else if (appendToExistingEntry(updatedEnvironment, SPRING_PROFILES_ACTIVE_FQN, CLOUD_PROFILE_NAME)) {
+		}else if (appendToExistingEntry(updatedEnvironment, SPRING_PROFILES_ACTIVE_FQN, CLOUD_PROFILE_NAME)) {
 			return updatedEnvironment;
-		}
-		else if (appendToExistingEntry(updatedEnvironment, SPRING_PROFILES_ACTIVE_HYPHENATED, CLOUD_PROFILE_NAME)) {
+		}else if (appendToExistingEntry(updatedEnvironment, SPRING_PROFILES_ACTIVE_HYPHENATED, CLOUD_PROFILE_NAME)) {
 			return updatedEnvironment;
 		}
 		// If Key provided, create new spring profiles active entry.
@@ -99,8 +97,8 @@ class CfEnvConfigurer {
 	 */
 	static String appendCloudProfileToSpringProfilesActiveArg(String arg) {
 		if ((arg.contains(SPRING_PROFILES_ACTIVE_FQN) ||
-				arg.contains(SPRING_PROFILES_ACTIVE_HYPHENATED) ||
-				arg.contains(SPRING_PROFILES_ACTIVE)) && arg.contains("=")) {
+		arg.contains(SPRING_PROFILES_ACTIVE_HYPHENATED) ||
+		arg.contains(SPRING_PROFILES_ACTIVE)) && arg.contains("=")) {
 			String[] tokens = arg.split("=");
 			arg = String.join("=", tokens[0], appendToValueIfPresent(tokens[1], CLOUD_PROFILE_NAME));
 		}
